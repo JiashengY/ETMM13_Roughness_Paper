@@ -1,0 +1,40 @@
+        \begin{tikzpicture}[]
+        \centering
+        \begin{axis}[
+            ylabel={$\Delta \Theta^+$},
+            xlabel={$(y-d)^+$},
+            ymin=-2, ymax=6,
+			xmin=1,xmax=500,
+					ylabel near ticks,
+            width=1.\linewidth,
+            height=0.8\linewidth,
+			xmode=log,
+            legend style={fill=white,font=\tiny,anchor=south east},
+            legend pos= south east,
+            label style={font=\footnotesize},
+            tick label style={font=\footnotesize}
+            ]
+                                						\addplot [
+            black,thick,dashed,
+            ]
+            coordinates{
+            (160,-5)
+            (160,6)
+            };
+            \addlegendentry{critical height $y_c$}
+            \addplot [
+            green,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/DTprofile1.csv};
+            \addlegendentry{$G2M$}
+									\addplot [
+            red,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/DTprofile2.csv};
+            \addlegendentry{$G2F$}
+
+
+
+
+        \end{axis}
+        \end{tikzpicture}

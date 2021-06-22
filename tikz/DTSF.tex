@@ -1,0 +1,88 @@
+        \begin{tikzpicture}
+        \centering
+        \begin{axis}[
+            ylabel={$\Delta U^+$, $\Delta \Theta^+$},
+            xlabel={ES},
+            ymin=3, ymax=8,
+			xmax=0.66,
+			xmin=0.4,
+					ylabel near ticks,
+            width=1\linewidth,
+            height=0.8\linewidth,
+            label style={font=\footnotesize},
+            legend style={font=\tiny,anchor=south east},
+                        legend pos=south east,
+            tick label style={font=\footnotesize}
+            ]
+                        			\addplot [
+            blue,thick,mark=none
+            ]
+            coordinates{
+            (0.57, 4.72)
+            (0.44, 4.39)
+            };
+            			\addlegendentry{$Sk=0.48$}
+            			\addplot [
+            red,thick,mark=none
+            ]
+            coordinates{
+            (0.54,3.99)
+            (.43,3.70)
+            };
+            \addlegendentry{$Sk=0$}
+            			\addplot [
+            green,thick,mark=none
+            ]
+            coordinates{
+            (.57,4.68)
+            (.44,4.38)
+            };
+            \addlegendentry{$Sk=-0.48$}
+            			\addplot [
+            blue,thick,mark=o
+            ]
+            coordinates{
+            (0.57, 7.28)
+            (0.44, 6.86)
+            };
+            			\addplot [
+            red,thick,mark=o
+            ]
+            coordinates{
+            (0.54,6.66)
+            (.43,6.39)
+            };
+            			\addplot [
+            green,thick,mark=o
+            ]
+            coordinates{
+            (.57,6.07)
+            (.44,5.63)
+            };
+            
+            
+            
+			\addplot [
+            blue,thick,mark=square
+            ]
+            coordinates{
+            (0.57, 4.72)
+            (0.44, 4.39)
+            };
+            			\addplot [
+            red,thick,mark=square
+            ]
+            coordinates{
+            (0.54,3.99)
+            (.43,3.70)
+            };
+            			\addplot [
+            green,thick,mark=square
+            ]
+            coordinates{
+            (.57,4.68)
+            (.44,4.38)
+            };
+
+        \end{axis}
+        \end{tikzpicture}

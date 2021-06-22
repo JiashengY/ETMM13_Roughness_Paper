@@ -1,0 +1,93 @@
+        \begin{tikzpicture}[]
+        \centering
+        \begin{axis}[
+            ylabel={$U^+$},
+            xlabel={$(y-d)^+$},
+            ymin=0, ymax=35,
+			xmin=1,xmax=500,
+            width=1\linewidth,
+            height=0.8\linewidth,
+			xmode=log,
+					ylabel near ticks,
+			ytick={0,10,20,30},
+            legend style={fill=white,font=\tiny,anchor=north east},
+            legend pos=north east,
+            label style={font=\footnotesize},
+            tick label style={font=\footnotesize}
+            ]
+            						\addplot [
+            black,thick,dashed,mark=none,
+            ]
+            coordinates{
+            (160, 40)
+            (160, -15)
+            };
+            \addlegendentry{critical height $y_c$}
+			\addplot [
+            green,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/UprofileG24FM7.csv};
+            \addlegendentry{$G2M$}
+						\addplot [
+            red,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/UprofileG24FM8.csv};
+            \addlegendentry{$G2F$}
+						\addplot [
+            black,dashdotted,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/UprofileG24FM9.csv};
+            \addplot [
+            red,dashed,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/UprofileG24FM3.csv};
+            \addplot [
+            green,dashed,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/UprofileG24FM4.csv};	            
+        \end{axis}
+        
+        \begin{axis}[
+		%xlabel=$(y-d)^+$,
+		ylabel={$U^+_s-U^+_r$},
+		xmin=0,xmax=500,
+		ymin=0,ymax=8,
+		%y dir=reverse,
+		clip=true,
+		set layers,
+		xmode=log,
+		clip mode=individual,
+	    height=0.45\linewidth,
+		width=.45\linewidth,
+		ylabel near ticks,
+		xlabel near ticks,
+		%axis x line*=bottom,
+		%axis y line*=left,
+		%xticklabels=\empty,
+		%ytick={0.12},
+		label style={font=\footnotesize},
+		yticklabel style={/pgf/number format/fixed},
+		tick label style={font=\footnotesize},
+		at={(0.13\linewidth,0.32\linewidth)}
+	]
+	\centering
+\addplot [
+            black,thick,dashed,
+            ]
+            coordinates{
+            (160,-4)
+            (160,10)
+            };
+									\addplot [
+            green,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/DUprofileG24mf24.csv};
+						\addplot [
+            red,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/DUprofileG24mf25.csv};
+
+
+\end{axis}
+        
+        \end{tikzpicture}

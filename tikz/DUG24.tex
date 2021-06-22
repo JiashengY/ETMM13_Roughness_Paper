@@ -1,0 +1,37 @@
+        \begin{tikzpicture}[]
+        \centering
+        \begin{axis}[
+            ylabel={$\Delta U^+$},
+            xlabel={$(y-d)^+$},
+            ymin=-2, ymax=8,
+			xmin=1,xmax=500,
+            width=1.\linewidth,
+            height=0.8\linewidth,
+			xmode=log,
+            legend style={fill=white,font=\tiny,anchor=south east},
+            legend pos= south east,
+            label style={font=\footnotesize},
+            tick label style={font=\footnotesize}
+            ]
+\addplot [
+            black,thick,dashed,
+            ]
+            coordinates{
+            (160,-4)
+            (160,10)
+            };
+            \addlegendentry{critical height $y_c$}
+									\addplot [
+            green,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/DUprofileG24mf24.csv};
+            \addlegendentry{$G2M$}
+						\addplot [
+            red,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/DUprofileG24mf25.csv};
+            \addlegendentry{$G2F$}
+
+
+        \end{axis}
+        \end{tikzpicture}
