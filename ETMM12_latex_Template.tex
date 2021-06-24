@@ -180,7 +180,7 @@ This increase manifests itself in a downward shift in the logarithmic region of 
 The latter parameter is widely used as an input to engineering applications.
 Therefore, the central importance of this mean velocity downward shift $\Delta U^+$ in determining the hydrodynamic property of the roughness is understood, which is referred to as the (Hama) roughness function.
 To find $\Delta U^+$ for an arbitrary roughness at a certain roughness flow regime, one needs to either run a laboratory (or high-fidelity numerical) experiment or use a so-called roughness correlation, which relates the topography of roughness to $\Delta U^+$. 
-While the latter option is obviously less costly, large number of topographical metrics should be systematically investigated to construct such a predictive correlation e.g. skewness $Sk(1/k_{\text{rms}}^3)\int_S(k-k_{\text{md}})^3\mathrm{d}S$ and $k_{\text{rms}}=\sqrt{(1/S)\int_S(k-k_{\text{md}})^2\mathrm{d}S}$(Flack \& Schultz 2010), effective slope ES$=(1/S)\int_S|\partial k/\partial x|\mathrm{d}S$ (Napoli \textit{et al.} 2008), roughness correlation length $L_{\text{corr}}$ (Sigal \& Danberg 2008).
+While the latter option is obviously less costly, large number of topographical metrics should be systematically investigated to construct such a predictive correlation e.g. skewness $Sk=(1/k_{\text{rms}}^3)\int_S(k-k_{\text{md}})^3\mathrm{d}S$ and $k_{\text{rms}}=\sqrt{(1/S)\int_S(k-k_{\text{md}})^2\mathrm{d}S}$(Flack \& Schultz 2010), effective slope ES$=(1/S)\int_S|\partial k/\partial x|\mathrm{d}S$ (Napoli \textit{et al.} 2008), roughness correlation length $L_{\text{corr}}$ (Sigal \& Danberg 2008).
 
 Similar to the skin friction, roughness can enhance the heat transfer of the surface, designed roughness are often used in engineering applications (Forooghi \textit{et al.} 2017a).
 However, it is widely understood that the enhancement of heat transfer is not directly proportional to the increase of skin friction.
@@ -188,7 +188,7 @@ This is reflected by the term 'Reynolds analogy factor' $RA=2St/C_f$ (Bons 2005)
 Although, temperature profile of a forced convection smooth-wall flow is demonstrated also exhibits a logarithmic region (Kader 1981). 
 The heat transfer of a rough wall can be also characterized by an analogous term to roughness function $\Delta U^+$, i.e. $\Delta \Theta^+$, where $\Theta$ represents the double-averaged temperature field.
 $\Delta \Theta^+$ describes the downward shift of the mean temperature profile due to roughness relative to the smooth case with comparable Reynolds number $Re_\tau$ (Cebeci \& Bradshaw 1984).
-Unlike the detailed study on the correlation of skin friction, the correlation of heat transfer and roughness topography has not yet been extensively studied by the researchers.
+Unlike the extensive study on the correlation of skin friction, the correlation of heat transfer and roughness topography has not yet been detailed studied by the researchers.
 
 At the moment, no universal predictive model for the roughness effect is found.
 Flack proposed use of Direct Numerical Simulation (DNS) for generating massive database needed for a universal roughness correlation (Flack 2018).
@@ -204,7 +204,7 @@ The generation process is realized by discrete fast Fourier transform (DFFT), th
 
 In the present work, pseudo-random roughness with different prescription of PDF and PS are generated and simulated in both minimal channels and conventional full-span channels at $Re_\tau\approx500$.
 The performance of the roughness generation method as well as the minimal channels are demonstrated.
-The impact of different PDF and PS configurations on both velocity and temperature fields is exhibited.
+The impact of different roughness height PDF and PS configurations on both velocity and temperature fields is exhibited.
 %The paper is organized in following way, in~\ref{sec:method} the roughness generation methodology along with the simulation setups will be illustrated. 
 %In~\ref{sec:result} simulation results from both minimal channels and full span channels are analyzed.
 %Finally in~\ref{sec:Cons} conclusions are given.
@@ -216,7 +216,7 @@ Initially, a roughness map with prescribed roughness PDF is given and is labeled
 This map do not necessarily contain desired PS.
 For the next step, this map is transformed using DFFT and compared with the second initial map with desired PS, which is labeled as $k_{\text{PS}}^0$.
 After that, the field is transformed back with inverse DFFT and adjust the height distribution to fit the PDF.
-The iterative adjustment of PDF and PS continues until the error of PDF and PS, which are measured by the percentage disagreement of PDF and PS profile respectively, approaches a stationary low value.
+The iterative adjustment of PDF and PS continues until the error, which are measured by the percentage disagreement of PDF and PS profile respectively, approaches a stationary low value.
 For further information readers are referred to the literature (Pérez-Ràfols \& Almqvist 2019).
 \subsection{Direct numerical simulation}
 Direct numerical simulations are carried out in fully developed turbulent channels.
@@ -253,7 +253,7 @@ On the other side, power-law PS is chosen, i.e. $E_k(\textbf{q})=C_0(\norm{\text
 $p$ is chosen as $-1$ and $-2$ in seek of overlapping with previous researches (Barros \textit{et al.} 2018, Nikora \textit{et al.} (2019)).
 The cutoff wavelengths of the PS are selected to be moderate to the channel size as well as the grid resolution, i.e. the presenting roughness wavelength $\lambda$ obeys $0.8H\leq\lambda\leq0.08H$.
 
-In summary, by "grid searching" of these two roughness parameters, in total 6 ($3\times2$) roughness topographies are prescribed.
+In summary, by "grid searching" of these two roughness parameters in two channel sizes, in total 12 ($3\times2\times2$) rough surfaces are individually produced.
 Following abbreviation is used throughout the text to distinguish the cases:
 \begin{equation}
     \overbrace{\underbrace{\boxed{\;G\;}}_\text{PDF}\;\;\underbrace{\boxed{ \;2\;}}_\text{$-p$} }^{\text{Topography}}\;|\overbrace{\boxed{\;F\;}}^{\text{Channel size}}~.
@@ -265,9 +265,9 @@ Following abbreviation is used throughout the text to distinguish the cases:
 \end{itemize}
 One of the irregular roughness topographies, $G2F$, is illustrated in figure~\ref{G24F}, the size of the minimal channel is represented by the black frame in the figure.
 The roughness metrics that are widely used for roughness characterization are shown in Table~\ref{tab:SumOfCase}.
-As one can see, the roughness topographical statistics from the random generation process are preserved for both rough surface sizes.
+As one can see, the roughness topographical statistics from the random generation process are preserved for both surface sizes.
 It is worth mentioning that the roughness for minimal channels and full span channels are independently generated, which means each surface has an individual realization but the statistics are controlled by the generation method.
-Thus, the stability of the generation method, in terms of roughness topographical statistics, is demonstrated.
+Thus, the stability of the generation method is demonstrated in terms of roughness topographical statistics.
 
 %\begin{figure}
 %    \centering
@@ -340,7 +340,7 @@ It is also shown in the present work that $d$, derived from velocity field, also
 %\label{UG242}
 %\end{figure}
 The velocity field of exemplary cases $G$2$M$ and $G$2$F$ are compared in figure~\ref{UG241}.
-The velocity offset profiles $U_s^+-U_r^+$ are shown in the inset of figure~\ref{UG241} with identical coloring style.
+The velocity offset profiles $U_s^+-U_r^+$ are shown in the inset of figure~\ref{UG241} using same coloring style.
 With the same measurement, temperature fields predicted by minimal channel and full span channel are compared in figure~\ref{TG241}.
 As one can observe, excellent agreement of the profiles are achieved between minimal channels and full span channels below each critical height $y_c$.
 Due to the nature of minimal channels, sudden increase of the profiles in outer layer can be observed for both smooth and rough cases.
