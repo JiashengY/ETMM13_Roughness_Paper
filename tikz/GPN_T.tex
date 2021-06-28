@@ -1,0 +1,43 @@
+        \begin{tikzpicture}[]
+        \centering
+        \begin{axis}[
+            ylabel={$\Theta^+$},
+            xlabel={$(y-d)^+$},
+            ymin=0, ymax=15,
+			xmin=1,xmax=500,
+            width=1\linewidth,
+            height=0.8\linewidth,
+			xmode=log,
+					ylabel near ticks,
+			ytick={0,5,10,15},
+            legend style={fill=white,font=\tiny,anchor=north west},
+            legend pos=north west,
+            label style={font=\footnotesize},
+            tick label style={font=\footnotesize}
+            ]       
+                                    \addplot [
+            blue,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/GPNM1_T3.csv};	            \addlegendentry{$Sk=0.48$}
+             
+                        \addplot [
+            red,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/GPNM1_T1.csv};	
+            \addlegendentry{$Sk=0$}
+                                    \addplot [
+            green,solid,thick,
+            ]
+            table [x=X, y=Y,col sep=comma]{CSV/GPNM1_T2.csv};	
+      \addlegendentry{$Sk=-0.48$}
+                          						\addplot [
+            black,thick,dashed,
+            ]
+            coordinates{
+            (160,0)
+            (160,200)
+            };
+                  \addlegendentry{critical height $y_c$}
+        \end{axis}
+       
+        \end{tikzpicture}

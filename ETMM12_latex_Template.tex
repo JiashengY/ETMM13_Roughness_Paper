@@ -207,6 +207,7 @@ The heat transfer coefficient of a rough surface, $C_{hr}$, can be derived by $\
     \Delta \Theta^+=\sqrt{\frac{C_{fs}}{2}}&\bigl(\frac{1}{C_{hs}}-\frac{1}{\kappa_m\kappa_h}\bigr)\\
     &-\sqrt{\frac{C_{fr}}{2}}\bigl(\frac{1}{C_{hr}}-\frac{1}{\kappa_m\kappa_h}\bigr)~.
 \end{aligned}
+\label{ThetaCh}
 \end{equation}
 %Unlike the extensive study on the correlation of roughness function $\Delta U^+$, the correlation of $\Delta \Theta^+$ and roughness topography has not received the same amount of attention.
 
@@ -422,12 +423,21 @@ The trend observed in the present results fully agrees with what suggested by th
 On the other hand, the averaged offset of logarithmic temperature profile $\Delta \Theta^+$, analogous to $\Delta U^+$, are shown in figure~\ref{fig:DTTOPO}.
 The evolution of $\Delta \Theta^+$ show significant difference to $\Delta U^+$ -- both in value and trend.
 It is demonstrated that Gaussian surfaces show lowest interference to temperature field while these skewed roughness, regardless of its sign, can enhance the temperature offset.
-By adjusting the PS slope $p$ vertical shift of $\Delta \Theta^+$ can be observed for all roughness topographies.
+By adjusting the PS slope $p$ the shift of $\Delta \Theta^+$ can be observed for all roughness topographies.
 To shed light into the correlation of spatial roughness distribution and $\Delta \Theta^+$, $\Delta \Theta^+$ is plotted as a function of effective slope ES in figure~\ref{fig:DTTOPO}.
 Approximately parallel increases of $\Delta \Theta^+$ with ES for all types of roughness are exhibited.
 Similar trend can be found for $\Delta U^+$.
-The overlapping lines of $\Delta \Theta^+$(blue and green) with $Sk=\pm0.48$ illustrate that the peak dominant surfaces($Sk=0.48$) show identical thermodynamic property to the pit dominant surfaces($Sk=-0.48$) given the same PS.
-
+Notably, surfaces whose $Sk=\pm0.48$ show comparable value of $\Delta\Theta^+$.
+The exemplary temperature profiles of $P2M$, $G2M$ and $N2M$ are ploted in figure~\ref{GPN}.
+In the near wall region, due to the different blockage effect introduced by skewness, temperature profiles diverge.
+However in the logarithmic layer, the temperature profiles of positively and negatively skewed roughness collapse.
+Have to mention that identical $\Delta \Theta^+$ of negatively and positibely skewed roughness do not necessarily translate to a identical $C_{hr}$ according to Eqn.~\ref{ThetaCh}.
+Detailed study of the effect of skewness on the heat transfer coefficient should be carried out.
+\begin{figure}
+\input{tikz/GPN_T}
+\caption{Temperature profiles of $G/P/N2M$}
+\label{GPN}
+\end{figure}
 \section{ Conclusions }\label{sec:Cons}
 DNS is carried out for fully developed turbulent flow over artificial irregular roughness driven by constant pressure gradient at $Re_\tau\approx 500$.
 A source term for temperature field is applied while the temperature for the roughness is prescribed to be 0.
