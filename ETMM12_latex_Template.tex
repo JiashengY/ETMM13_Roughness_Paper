@@ -185,7 +185,7 @@ The shifted velocity profile in logarithmic layer writes:
 Where $\kappa_m\approx0.4$ is the von Karman constant, $A_m$ is the smooth-wall offset.
 It is widely reported that $\Delta U^+$ is related to the equivalent sand-grain roughness $k_s$ (Jim\'{e}nez 2004). 
 the latter parameter is widely used as an input to engineering applications.
-Furthermore, $\Delta U^+=\sqrt{2/C_{fs}}-\sqrt{2/C_{fr}}$ gives direct relation between roughenss function and skin friction (Schultz \& Flack 2009), where $C_{fs}$, $C_{fr}$ are the skin friction coefficients for smooth and rough wall at matched $Re_\tau$ respectively.
+Furthermore, $\Delta U^+=\sqrt{2/C_{fs}}-\sqrt{2/C_{fr}}$ gives direct relation between roughenss function and skin friction (Hama 1954), where $C_{fs}$, $C_{fr}$ are the skin friction coefficients for smooth and rough wall at matched $Re_\tau$ respectively.
 Therefore, the central importance of this mean velocity downward shift $\Delta U^+$ in determining the hydrodynamic property of the roughness is understood, which is referred to as the (Hama) roughness function.
 To find $\Delta U^+$ for an arbitrary roughness at a certain roughness flow regime, one needs to either run a laboratory (or high-fidelity numerical) experiment or use a so-called roughness correlation, which relates the topography of roughness to $\Delta U^+$. 
 While the latter option is obviously less costly, large number of topographical metrics should be systematically investigated to construct such a predictive correlation e.g. skewness $Sk=(1/k_{\text{rms}}^3)\int_S(k-k_{\text{md}})^3\mathrm{d}S$ and $k_{\text{rms}}=\sqrt{(1/S)\int_S(k-k_{\text{md}})^2\mathrm{d}S}$ (Flack \& Schultz 2010), effective slope ES$=(1/S)\int_S|\partial k/\partial x|\mathrm{d}S$ (Napoli \textit{et al.} 2008), roughness correlation length $L_{\text{corr}}$ (Sigal \& Danberg 2008).
@@ -462,24 +462,39 @@ Jiasheng Yang and Pourya Forooghi gratefully acknowledge financial support from 
 %
 \begin{References}
 \item Jim\'{e}nez, J. (2004), Turbulent flows over rough walls, {\it Ann. Rev. Fluid Mech.} Vol. 36, pp. 173-196.
-\item Flack, K. A. (2018), Moving beyond Moody, {\it  J. Fluid Mech.}, Vol. 842, pp. 1-4.
-\item Chung, D., Chan, L., MacDonald, L., Hutchins, N. and Ooi, A. (2015), A fast direct numerical simulation method for characterising hydraulic roughness, {\it  J. Fluid Mech.}, Vol. 773, pp. 418-431.
-\item Pérez-Ràfols, F. and Almqvist, A. (2019), Generating randomly rough surfaces with given height probability distribution and power spectrum, {\it Tribology International}, Vol. 131, pp. 591-604.
+\item Hama, F.R. (1954), Boundary-layer characteristics for rough and smooth surfaces, {\it Soc. Nav. Archit. Mar. Eng.} Vol. 64, pp.333.
 \item Flack, K. A. and Schultz, M. P. (2010), Review of Hydraulic Roughness Scales in the Fully Rough Regime, {\it J. Fluids Engineering}, Vol. 132.
 \item Napoli, E., Armenio, V. and De Marchis, M (2008). The effect of the slope of irregularly distributed roughness elements on turbulent wall-bounded flows, {\it  J. Fluid Mech.}, Vol. 613. pp. 385-394.
-\item MacDonald, M., Chung, D. Hutchins, N., Chan, L., Ooi, A. and Garc{\'{\i}}a-Mayoral, A. (2016), The minimal channel: a fast and direct method for characterising roughness, {\it Journal of Physics: Conference Series}, Vol. 708,
 \item Sigal, A., Danberg, J. E. (2008), New correlation of roughness density effect on the turbulent boudnary layer, {\it AIAA Journal}, Vol. 28, pp. 554-556.
-\item Goldstein, D., Handler, R. and Sirovich, L., Modeling a no-slip flow boundary with an external force field., {\it Journal of Computational Physics}, Vol. 105, pp. 354-366.
 \item Forooghi, P., Flory, M., Bertsche, D., Wetzel, T. and Frohnapfel, B. (2017a). Heat transfer enhancement on the liquid side of an industrially designed flat-tube heat exchanger with passive insertes-numerical investigation. {\it Appl. Therm. Eng.}, Vol. 123, pp. 573-583.
+\item Dipprey, D. F. and Sabersky, R. H. (1963), Heat and momentum transfer in smooth and rough tubes at various prandtl numbers. {\it Int. J. Heat Mass Transfer}. Vol.6, pp. 329-353.
 \item Bons, J.P. (2005) A critical assessment of Reynolds analogy for turbine flows. {\it ASME J. Heat Transf.}, Vol. 127(5), pp. 472-485.
 \item Kader, B. A. (1981) Temperature and concentration profiles in fully turbulent boundary layers. {\it Intl. J. Heat Mass Transfer}, Vol. 24, pp. 1541-1544.
-\item Cebeci, T. and Bradshaw, P. (1984), Physical and computational aspects of convective heat transfer. Springer. 
 \item MacDonald, M., Hutchins, N., Chung, D. (2019), Roughness effects in turbulent forced convection, {\it J. Fluid Mech.}, Vol. 861, pp. 138-162.
+\item Flack, K. A. (2018), Moving beyond Moody, {\it  J. Fluid Mech.}, Vol. 842, pp. 1-4.
+\item Chung, D., Chan, L., MacDonald, L., Hutchins, N. and Ooi, A. (2015), A fast direct numerical simulation method for characterising hydraulic roughness, {\it  J. Fluid Mech.}, Vol. 773, pp. 418-431.
+\item MacDonald, M., Chung, D. Hutchins, N., Chan, L., Ooi, A. and Garc{\'{\i}}a-Mayoral, A. (2016), The minimal channel: a fast and direct method for characterising roughness, {\it Journal of Physics: Conference Series}, Vol. 708,
+\item Pérez-Ràfols, F. and Almqvist, A. (2019), Generating randomly rough surfaces with given height probability distribution and power spectrum, {\it Tribology International}, Vol. 131, pp. 591-604.
+\item Goldstein, D., Handler, R. and Sirovich, L., Modeling a no-slip flow boundary with an external force field., {\it Journal of Computational Physics}, Vol. 105, pp. 354-366.
 \item Barros, J. M., Schultz, M. P. and Flack, K. A. (2018), Measurements of skin-friction of systematically generated surfaces roughness,{\it  Intl. J. Heat and Fluid Flow}, Vol. 72, pp. 1-7.
 \item Nikora, V. I., Stoesser, T., Cameron, S. M., Stewart, M., Papadopoulos, K., Ouro, P., McSherry, R.,Zampiron, A., Marusic, I., Falconer, R. A. and et al (2019), Friction factor decomposition for rough-wall flows: theoretical background and application to open-channel flows, {\it J. Fluid Mech.}, Vol. 872, pp. 626-664.
+\item Jackson, P.S. 1981 On the displacement height in the logarithmic velocity profile. \textit{J. Fluid Mech.} vol.111, pp.15-25.
 \item Flack, K.A., Schultz. M.P. \& Barros, J.M. 2020 Skin friction measurements systematically-varied roughness: Probing the role of roughness amplitude and skewness. \textit{Flow, Turbulence and Combustion}, Vol. 104, pp.317-329.
 \item Jelly, T.O. \& Busse, A. 2018 Reynolds and dispersive shear stress contributions above highly skewed roughness \textit{J. Fluid Mech.} vol. 852, pp. 710-724.
-\item Jackson, P.S. 1981 On the displacement height in the logarithmic velocity profile. \textit{J. Fluid Mech.} vol.111, pp.15-25.
+
+
+
+
+
+
+
+
+%\item Cebeci, T. and Bradshaw, P. (1984), Physical and computational aspects of convective heat transfer. Springer. 
+
+
+
+
+
 \end{References}
 %
 %
