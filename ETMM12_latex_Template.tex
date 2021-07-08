@@ -108,10 +108,10 @@ B. Frohnapfel$^{1}$ and
 P. Forooghi$^{3,}$\footnote{Corresponding author's Email: forooghi@mpe.au.dk}
 }  \\ \\
 %\bf  \textit{Institute of Fluid Mechanics, Karlsruhe Institute of Technology, Karlsruhe, Germany} \\
-\bf  $^{1}$\textit{Institute of Fluid Mechanics, Karlsruhe Institute of Technology, Karlsruhe, Germany} \\
+\bf  $^{1}$\textit{Institute of Fluid Mechanics, Karlsruhe Institute of Technology, Germany} \\
 \bf  $^{2}$\textit{Institute of Fluid Mechanics \& Aerodynamics, Technical University Darmstadt,}\\
-\bf  \textit{Darmstadt, Germany} \\
-\bf  $^{3}$\textit{Dept. Mechanical \& Production Engineering, Aarhus University, Aarhus, Denmark} \\ 
+\bf  \textit{Germany} \\
+\bf  $^{3}$\textit{Dept. Mechanical \& Production Engineering, Aarhus University, Denmark} \\ 
 
 %\\ \underline{\bf alexander.stroh@kit.edu}
 }
@@ -163,17 +163,17 @@ P. Forooghi$^{3,}$\footnote{Corresponding author's Email: forooghi@mpe.au.dk}
 %%%%%%%%%%%% Insert here the abstract body.
 %
 \Abstract
-Direct numerical simulation (DNS) is carried out to study turbulent flow over irregular rough surfaces in the periodic minimal channel.
-A passive scalar is presented in the flow to study heat transfer over rough surfaces with the Prandtl number $Pr=0.7$.
-The generation of irregular roughness is based on a mathematical random algorithm, in which the power spectrum (PS) of the roughness height function along with its probability density function (PDF) can be directly prescribed.
-The hydro- and thermodynamic properties of the roughness, particularly the roughness function ($\Delta U^+$) as well as the temperature profile offset ($\Delta \Theta^+$), are compared with those obtained from full span DNS for 6 types of roughness topographies with systematically varied PDF and PS configuration at $Re_\tau\approx500$.
-The comparison confirms the capability of the minimal channel approach for characterization of irregular rough surfaces providing excellent agreement (within $5\%$) in $\Delta U^+$ and $\Delta \Theta^+$ across various types of roughness topographies.
-Results also indicates that random realizations of roughness, with a fixed PS and PDF, translate to similar prediction with a narrow scatter.
+Direct numerical simulation (DNS) is carried out to study turbulent flow over irregular rough surfaces in periodic minimal channels.
+A passive scalar transport equation is solved to study heat transfer over rough surfaces with the Prandtl number $Pr=0.7$.
+The generation of irregular roughness is based on a mathematical randomization algorithm, in which the power spectrum (PS) of the roughness height function along with its probability density function (PDF) can be directly prescribed.
+The hydrodynamic and thermal properties of the roughness, particularly the roughness function ($\Delta U^+$) as well as the temperature profile offset ($\Delta \Theta^+$), are compared with those obtained from a full span DNS for 6 types of roughness topographies with systematically varied PDF and PS configurations at $Re_\tau\approx500$.
+The comparison confirms the ability of the minimal channel approach to perform characterization of irregular rough surfaces providing excellent agreement (within $5\%$) in $\Delta U^+$ and $\Delta \Theta^+$ across various types of roughness topographies.
+Results also indicate that random realizations of roughness, with a fixed PS and PDF, translate to similar prediction with a narrow scatter.
 Finally, the impact of systematically varied roughness PDF and PS to both velocity and temperature profile is shown.
-It is also demonstrated that the influence of varying PDF and PS for roughness skin friction and heat transfer are different.
+It is also demonstrated that the influence of varying PDF and PS on the velocity and temperature fields is different.
 
 \section{Introduction}
-Rough surfaces are abundant in nature (e.g.  river beds and complex terrain) and engineering (e.g. degraded turbine blades, fouled ship hulls and iced aircraft surfaces). 
+Rough surfaces are abundant in nature and engineering applications. 
 It is well established that the topography of roughness can significantly affect its hydrodynamic properties.
 In practice, the most important hydrodynamic effect of roughness is an increase in the skin friction coefficient of the surface.
 This increase manifests itself in a downward shift in the logarithmic region of inner scaled mean velocity profile $\Delta U^+$.
@@ -182,99 +182,99 @@ The shifted velocity profile in logarithmic layer writes:
     U^+=\frac{1}{\kappa}\log(y^+)+A_m-\Delta U^+~.
     \label{Ushift}
 \end{equation}
-Where $\kappa_m\approx0.4$ is the von Karman constant, $A_m$ is the smooth-wall offset.
-It is widely reported that $\Delta U^+$ is related to the equivalent sand-grain roughness $k_s$ (Jim\'{e}nez 2004). 
+Where $\kappa\approx0.4$ is the von Karman constant, $A_m$ is the smooth-wall offset.
+$\Delta U^+$ is related to the equivalent sand-grain roughness $k_s$ (Jim\'{e}nez 2004);
 the latter parameter is widely used as an input to engineering applications.
-Furthermore, $\Delta U^+=\sqrt{2/C_{fs}}-\sqrt{2/C_{fr}}$ gives direct relation between roughenss function and skin friction (Hama 1954), where $C_{fs}$, $C_{fr}$ are the skin friction coefficients for smooth and rough wall at matched $Re_\tau$ respectively.
-Therefore, the central importance of this mean velocity downward shift $\Delta U^+$ in determining the hydrodynamic property of the roughness is understood, which is referred to as the (Hama) roughness function.
+Furthermore, $\Delta U^+=\sqrt{2/C_{fs}}-\sqrt{2/C_{fr}}$ gives direct relation between roughness function and skin friction (Hama 1954), where $C_{fs}$, $C_{fr}$ are the skin friction coefficients for smooth and rough wall at matched $Re_\tau$ respectively.
+Therefore, the central importance of this mean velocity downward shift $\Delta U^+$, which is referred to as the (Hama) roughness function in determining the hydrodynamic property of the roughness is understood.
 To find $\Delta U^+$ for an arbitrary roughness at a certain roughness flow regime, one needs to either run a laboratory (or high-fidelity numerical) experiment or use a so-called roughness correlation, which relates the topography of roughness to $\Delta U^+$. 
-While the latter option is obviously less costly, large number of topographical metrics should be systematically investigated to construct such a predictive correlation e.g. skewness $Sk=(1/k_{\text{rms}}^3)\int_S(k-k_{\text{md}})^3\mathrm{d}S$ and $k_{\text{rms}}=\sqrt{(1/S)\int_S(k-k_{\text{md}})^2\mathrm{d}S}$ (Flack \& Schultz 2010), effective slope ES$=(1/S)\int_S|\partial k/\partial x|\mathrm{d}S$ (Napoli \textit{et al.} 2008), roughness correlation length $L_{\text{corr}}$ (Sigal \& Danberg 2008).
+While the latter option is obviously less costly, large number of topographical metrics should be systematically investigated to construct such a predictive correlation e.g. the skewness $Sk=(1/k_{\text{rms}}^3)\int_S(k-k_{\text{md}})^3\mathrm{d}S$ and $k_{\text{rms}}=\sqrt{(1/S)\int_S(k-k_{\text{md}})^2\mathrm{d}S}$ (Flack \& Schultz 2010), the effective slope ES$=(1/S)\int_S|\partial k/\partial x|\mathrm{d}S$ (Napoli \textit{et al.} 2008) or the roughness correlation length $L_{\text{corr}}$ (Sigal \& Danberg 2008).
 
-Similar to the skin friction, roughness can enhance the heat transfer of the surface, designed roughness are often used in engineering applications (Forooghi \textit{et al.} 2017a).
-However, it is widely understood that the enhancement of heat transfer is not directly proportional to the increase of skin friction due to the lack of pressure-drag analog (Dipprey \& sabersky 1963).
-This is reflected by the term 'Reynolds analogy factor' $RA=2St/C_f$ (Bons 2005).
-Temperature profile of a forced convection smooth-wall flow is demonstrated also exhibits a logarithmic region (Kader 1981). 
-The enhancement of heat transfer would result in a downward shift of this logarithmic temperature profile.
-Analogous to the Eqn.~\ref{Ushift} The rough wall temperature profile writes:
+Similar to the skin friction, roughness can enhance the heat transfer in a fluidic system, and in fact designed roughness is often used in engineering application to enhance the heat transfer (Forooghi \textit{et al.} 2017a).
+However, it is widely understood that the enhancement of heat transfer, reflected by Stanton number $St$, is not directly proportional to the increase of skin friction coefficient $C_f$ due to the lack of the pressure-related term on the temperature side (Dipprey \& Sabersky 1963).
+This can be reflected by applying the Reynolds analogy factor $RA=2St/C_f$ (Bons 2005).
+%Temperature profile of a forced convection smooth-wall flow is demonstrated also exhibits a logarithmic region (Kader 1981). 
+The enhancement of heat transfer would result in a downward shift of the logarithmic temperature profile.
+Analogous to the Eqn.~\ref{Ushift} the shifted rough wall temperature profile writes:
 \begin{equation}
     \frac{\Theta-\Theta_w}{\Theta_\tau}=\frac{1}{\kappa_h}\log(y^+)+A_h(Pr)-\Delta\Theta^+~,
 \end{equation}
-where $\Theta$ represents the double-averaged temperature field, the offset $A_h$ depends on the molecular Pandtl number $Pr\equiv\nu/\alpha$, $\alpha$ is the thermal diffusivity, $\Theta_w$ is the temperature at wall, $\Theta_\tau$ is the friction temperature $\Theta\equiv(q_w/\rho c_p)/U_\tau$. $q_w$ is the temporally and spatially averaged wall heat flux and $c_p$ is the specific heat at constant pressure.
+where $\Theta$ represents the non-dimensional temperature, the offset $A_h$ depends on the molecular Pandtl number $Pr$, $\Theta_w$ is the temperature at wall, $\Theta_\tau$ is the friction temperature $\Theta_\tau\equiv(q_w/\rho c_p)/U_\tau$. $q_w$ is the temporally and spatially averaged wall heat flux and $c_p$ is the specific heat capacity at constant pressure.
 Thus, the augmentation of heat transfer of a rough wall can be characterized by an analogous term to the roughness function $\Delta U^+$, i.e. $\Delta \Theta^+$.
-The heat transfer coefficient of a rough surface, $C_{hr}$, can be derived by $\Delta\Theta^+$ with know $C_{fr}$ at matched $Re_\tau$ through (MacDonald \textit{et al.} 2019):
+The Stanton number for a rough surface, $St_r$, can be derived by $\Delta\Theta^+$ with known $C_{fr}$ at a matched $Re_\tau$ through (MacDonald \textit{et al.} 2019):
 \begin{equation}
 \begin{aligned}
-    \Delta \Theta^+=\sqrt{\frac{C_{fs}}{2}}&\bigl(\frac{1}{C_{hs}}-\frac{1}{\kappa_m\kappa_h}\bigr)\\
-    &-\sqrt{\frac{C_{fr}}{2}}\bigl(\frac{1}{C_{hr}}-\frac{1}{\kappa_m\kappa_h}\bigr)~.
+    \Delta \Theta^+=\sqrt{\frac{C_{fs}}{2}}&\bigl(\frac{1}{St_s}-\frac{1}{\kappa\kappa_h}\bigr)\\
+    &-\sqrt{\frac{C_{fr}}{2}}\bigl(\frac{1}{St_r}-\frac{1}{\kappa\kappa_h}\bigr)~.
 \end{aligned}
 \label{ThetaCh}
 \end{equation}
+where $C_{fs}$ and $St_s$ are the skin friction coefficient and Stanton number for the smooth wall, respectively.
 %Unlike the extensive study on the correlation of roughness function $\Delta U^+$, the correlation of $\Delta \Theta^+$ and roughness topography has not received the same amount of attention.
 
-It is since long desired for \textit{a priori} prediction of the aforementioned quantities to get rid of resource demanding (numerical) experiments. 
+It has long been desired for an \textit{a priori} prediction of the aforementioned quantities to avoid resource demanding (numerical) experiments. 
 Flack proposed use of Direct Numerical Simulation (DNS) for generating massive database needed for a universal roughness correlation (Flack 2018).
-The major problems in reaching this goal are a) the computational cost of DNS and b) the measurements of realistic rough surfaces are rare and not suitable for systematic studies.
-The aim of this work is to examine a new framework, which overcomes both obstacles. To relieve the computational cost we simulate the flow in fully developed turbulent channels with reduced streamwise and spanwise sizes. The idea was previously established and validated by Chung \textit{et al.} (2015), MacDonald \textit{et al.} (2016, 2019) with sinusoidal roughness structure. The criteria of the minimal channel size is given by the authors: $L_z^+\geq\text{max}(100,\Tilde{k}^+/0.4,\lambda_{\text{sin}}^+)$, $L_x^+\geq\text{max}(1000,3L_z^+,\lambda_{\text{sin}}^+)$.
-Where $L_x$ and $L_z$ are the streamwise and spanwise extend of the channel, respectively, $\Tilde{k}$ is the amplitude of the sinusoidal structure. $\lambda_{\text{sin}}$ represents the wavelength of the sinusoidal structure.
+The major problems in reaching this goal are the high computational cost of the DNS approach and difficulties related to the measurement of realistic rough surfaces.
+Such roughness scans are rare and mostly unsuitable for systematic studies.
+The aim of this work is to examine a new framework, which overcomes both obstacles. To relieve the computational cost we simulate the flow in fully developed turbulent channels with reduced streamwise and spanwise sizes. The idea was previously established and validated by Chung \textit{et al.} (2015), MacDonald \textit{et al.} (2016, 2019) with sinusoidal roughness structure. The criteria of the minimal channel size is given by those authors: $L_z^+\geq\text{max}(100,\Tilde{k}^+/0.4,\lambda_{\text{sin}}^+)$, $L_x^+\geq\text{max}(1000,3L_z^+,\lambda_{\text{sin}}^+)$, where $L_x$ and $L_z$ are the streamwise and spanwise extend of the channel, respectively and $\Tilde{k}$ is the amplitude of the sinusoidal structure. $\lambda_{\text{sin}}$ represents the wavelength of the sinusoidal structure.
 The criteria are set with the aim of accommodating the minimal channel to the near wall turbulence as well as the roughness structure.
-The research shows that minimal channel following the criteria above is capable for this type of roughness (repetitive) structure to predict the roughness function $\Delta U^+$ as well as the temperature offset $\Delta \Theta^+$, but has not been examined for irregular roughness up to now, i.e. the effect of repeating irregular roughness and the limited sample size of roughness topography introduced by the significantly reduced spanwise extend of minimal channel is yet unknown. 
+The research shows that minimal channel following the criteria above is capable for this type of roughness (repetitive) structure to predict the roughness function $\Delta U^+$ as well as the temperature offset $\Delta \Theta^+$, but has not been examined for irregular roughness up to now.
+Therefore, the effect of repeating irregular roughness and the limited sample size of irregular roughness topography introduced by the significantly reduced spanwise extend of minimal channel is yet unknown. 
 
-In order to evaluate the validity of this approach for irregular rough surfaces we employ the random algorithm proposed by Pérez-Ràfols \& Almqvist (2019). 
+In order to evaluate the validity of this approach for irregular rough surfaces we employ the random algorithm proposed by Pérez-Ràfols \& Almqvist (2019) for generation of roughness. 
 With the roughness generation method surface is generated randomly while the roughness statistical properties can be controlled by its height probability density function (PDF) and the power spectrum (PS) (hence the term pseudo-random roughness).
 The generation process is realized by discrete fast Fourier transform (DFFT), thus it is inherently suitable for the DNS simulations where periodic boundary condition is required.
 
-In the present work, pseudo-random roughness with different prescription of PDF and PS are generated and simulated in both minimal channels and conventional full-span channels at $Re_\tau\approx500$.
+In the present work, pseudo-random roughness with variation of PDF and PS are generated and simulated in both minimal channels and conventional full-span channels at $Re_\tau\approx500$.
 The performance of the roughness generation method as well as the minimal channels are demonstrated.
-The impact of different roughness height PDF and PS configurations on both velocity and temperature fields is exhibited.
+The impact of different roughness height PDF and PS configurations on both velocity and temperature fields is analyzed.
 %The paper is organized in following way, in~\ref{sec:method} the roughness generation methodology along with the simulation setups will be illustrated. 
 %In~\ref{sec:result} simulation results from both minimal channels and full span channels are analyzed.
 %Finally in~\ref{sec:Cons} conclusions are given.
 
 \section{Methodology}\label{sec:method}
 \subsection{Pseudo-random roughness generation method}
-The pseudo-random roughness is generated with the method originally proposed by Pérez-Ràfols \& Almqvist (2019), which will be referred to as generation method for the following text. The roughness structure function $k$ is represented by discrete elevation map on 2-D Cartesian grid, i.e. $k(x,z)$, where $x$, $z$ are the streamwise and spanwise coordinate respectively.
+The pseudo-random roughness is generated with the method originally proposed by Pérez-Ràfols \& Almqvist (2019). The roughness height function is represented by discrete elevation map on 2-D Cartesian grid, i.e. $k(x,z)$, where $x$, $z$ are the streamwise and spanwise coordinate respectively.
 Initially, a roughness map with prescribed roughness PDF is given and is labeled as $k_{\text{PDF}}^0$.
-This map do not necessarily contain desired PS.
+This map does not necessarily contain desired PS.
 For the next step, this map is transformed using DFFT and compared with the second initial map with desired PS, which is labeled as $k_{\text{PS}}^0$.
-After that, the field is transformed back with inverse DFFT and adjust the height distribution to fit the PDF.
-The iterative adjustment of PDF and PS continues until the error, which are measured by the percentage disagreement of PDF and PS profile respectively, approaches a stationary low value.
-For further information readers are referred to the literature (Pérez-Ràfols \& Almqvist 2019).
+After that, the field is transformed back with inverse DFFT and the height distribution is adjusted to fit the PDF.
+The iterative adjustment of PDF and PS continues until the error, which is measured by the devation in PDF and PS profile, approaches a stationary low value.
+For further information readers are referred to the manuscript by Pérez-Ràfols \& Almqvist, 2019.
 \subsection{Direct numerical simulation}
-Direct numerical simulations are carried out in fully developed turbulent channels.
-Flow is driven by constant pressure gradient $P_x$.
-Periodic boundary condition is applied to the streamwise and spanwise boundaries of the channel.
-Upper and lower wall are roughened by the roughness structures.
-The roughness with no-slip \& zero-temperature boundary condition is realized by imposing immersed boundary method (IBM) following Goldstein's method (Goldstein 1993).
-Where negative external force is applied to the flow in the roughness elements to obtain zero velocity \& temperature inside the roughness. 
-An source term $Q=\textbf{u}$ is added to the temperature field to obtain a steady temperature field as the flow flowing through periodic channel and being cooled by the zero-temperature roughness boundaries.
+Direct numerical simulations are carried out in a fully developed turbulent channel.
+The flow is driven by constant pressure gradient $P_x$.
+Periodic boundary condition is applied in the streamwise and spanwise directions of the channel, while the upper and lower walls are covered by the roughness structures.
+The roughness with no-slip \& zero-temperature boundary condition is realized by imposing immersed boundary method (IBM) following Goldstein's method (Goldstein 1993), where additional force is applied to the flow within the roughness elements to obtain zero velocity \& temperature inside the roughness. 
+A source term $Q$ is added to the energy equation for the simulation of mixed-type thermal boundary condition (the approach proposed by Kasagi \textit{et al.}, 1992).
 Thus, the Navier-Stokes equation writes:
 \begin{equation}
     \nabla\cdot \textbf{u}=0~,
 \end{equation}
 \begin{equation}
-    \frac{\partial \textbf{u}}{\partial t}+\nabla\cdot(\textbf{uu})=-\frac{1}{\rho}\nabla p+\nu\nabla^2\textbf{u}-\frac{1}{\rho}P_x\hat{\mathbf{e_x}}+\textbf{F}_u~,
+    \frac{\partial \textbf{u}}{\partial t}+\nabla\cdot(\textbf{uu})=-\frac{1}{\rho}\nabla p+\nu\nabla^2\textbf{u}-\frac{1}{\rho}P_x\hat{\mathbf{e}}_x+\textbf{F}_u~,
 \end{equation}
 \begin{equation}
     \frac{\partial \theta}{\partial t}+\nabla\cdot(\textbf{u}\theta)=\alpha\nabla^2\theta+Q+\textbf{F}_\theta~,
 \end{equation}
-where \textbf{u} is the velocity vector $\textbf{u}=(u,v,w)^\intercal$, $P_x$ is the mean pressure gradient in the flow direction added as a constant and uniform source term to the momentum equation to drive the flow in the channel. 
-Here $p$, $\hat{\mathbf{e_x}}$, $\rho$, $\nu$, $\textbf{F}_\theta$ and $\textbf{F}_u$ are pressure fluctuation, Kronecker delta, density, kinematic viscosity and external source term for momentum and energy equation due to IBM, respectively.
-The Friction Reynolds number is defined as $Re_\tau=u_\tau(H-k_{\text{md}})/\nu$, where $u_\tau=\sqrt{\tau_{w}}$ is the friction velocity and $\tau_w=-P_x(H-k_{\text{md}})$ is the wall shear stress controlled by the constant pressure gradient.
+where \textbf{u} is the velocity vector $\textbf{u}=(u,v,w)^\intercal$. $P_x$ is the mean pressure gradient in the flow direction added as a constant and uniform source term to the momentum equation to drive the flow in the channel. 
+Here $p$, $\hat{\mathbf{e}}_x$, $\rho$, $\nu$, $\textbf{F}_\theta$ and $\textbf{F}_u$ are pressure fluctuation, Kronecker delta, density, kinematic viscosity and external source term for momentum and energy equation due to IBM, respectively.
+The Friction Reynolds number is defined as $Re_\tau=u_\tau(H-k_{\text{md}})/\nu$, where $u_\tau=\sqrt{\tau_{w}/\rho}$ is the friction velocity and $\tau_w=-P_x(H-k_{\text{md}})$ is the wall shear stress prescribed by the constant pressure gradient.
 \subsection{Description of cases}
-Thanks to the flexibility of the roughness generation method, two of the roughness parameters chosen from both PDF and PS sides are systematically varied and analyzed utilizing DNS, namely $Sk $ and the PS slope $p$.
+Thanks to the flexibility of the roughness generation method, two of the roughness parameters chosen from both PDF and PS sides are systematically varied and analyzed utilizing DNS, namely $Sk$ and the PS slope $p$.
 Three values of $Sk$ are selected i.e. $Sk\approx-0.48$, $0$, $0.48$.
-Skewed roughness distribution obeys Weibull's distribution $f(k)= K\beta^K k^{(K-1)}e^{-(\beta k)^K}$, where $K$ is the form factor which is adjusted to match desired $Sk$, non-skewed roughness obeys the Gaussian distribution $f(k)=e^{-\frac{1}{2}(\frac{k-\mu}{\sigma})^2}/(1/\sigma\sqrt{2\pi})$.
+Skewed roughness distribution obeys Weibull's distribution $f_{W}(k)= K\beta^K k^{(K-1)}e^{-(\beta k)^K}$, where $K$ is the form factor which is adjusted to match desired $Sk$, non-skewed roughness obeys the Gaussian distribution $f_{G}(k)=e^{-(1/2)(k-\mu/\sigma)^2}/(1/\sigma\sqrt{2\pi})$.
 Moreover the kurtosis $Ku\approx3$ is selected for all roughness in search of the similarity to the Gaussian distribution.
 Therefore, the PDF are characterized in terms of negatively skewed, Gaussian and positively skewed distribution.
 The height of the roughness is scaled by the the 99\% confidence interval of the PDF, which is denoted as $k_{99}$.
 $k_{99}=0.1H$ is prescribed to all roughness configurations.
-In order to avoid extreme high/low roughness, roughness elements locate out side $1.2\times k_{99}/2$ around the meltdown height $k_{md}=(1/S)\int_Sk\mathrm{d}S$ are excluded, where $S$ is the wall-normal projection area of the surface.
+In order to avoid extreme high/low roughness, roughness elements locate out side $1.2\times k_{99}/2$ around the meltdown height $k_{md}=(1/S)\int_Sk\mathrm{d}S$ are excluded.
 
-On the other side, power-law PS is employed, i.e. $E_k(\textbf{q})=C_0(\norm{\textbf{q}}/q_0)^p$, where \textbf{q} is the wavenumber vector $\textbf{q}=(q_x,q_z)^\intercal$, $q_0=2\pi/\lambda_0$ is the referencing wavenumber corresponding to the largest in-plane length scale $\lambda_0$, $C_0$ is a constant to scale the roughness height, and $p$ is the slope of the power-law PS.
-$p$ is chosen as $-1$ and $-2$ in seek of overlapping with previous researches (Barros \textit{et al.} 2018, Nikora \textit{et al.} (2019)).
-The cutoff wavelengths of the PS are selected to be moderate to the channel size as well as the grid resolution, i.e. the presenting roughness wavelength $\lambda$ obeys $0.8H\leq\lambda\leq0.08H$.
+On the other side, power-law PS is employed, i.e. $E_k(\textbf{q})=C_0(\norm{\textbf{q}}/q_0)^p$, where \textbf{q} is the wavenumber vector $\textbf{q}=(q_x,q_z)^\intercal$, $q_0=2\pi/\lambda_0$ is the reference wavenumber corresponding to the largest in-plane length scale $\lambda_0$, $C_0$ is a constant to scale the roughness height, and $p$ is the slope of the power-law PS.
+$p$ is chosen as $-1$ and $-2$ in seek of overlapping with previous researches (Barros \textit{et al.} 2018, Nikora \textit{et al.}, 2019).
+The cutoff wavelengths of the PS are selected to accommodate to the channel size as well as the grid resolution, i.e. the presenting roughness wavelength $\lambda$ obeys $0.8H\leq\lambda\leq0.08H$.
 
-In summary, by "grid searching" of these two roughness parameters in two channel sizes, in total 12 ($3\times2\times2$) rough surfaces are individually produced.
+In summary, by systematically investigating of these two roughness parameters in different channel sizes, in total 12 ($3\text{ PDF}\times2\text{ PS}\times2\text{ sizes}$) rough surfaces are individually produced.
 Following abbreviation is used throughout the text to distinguish the cases:
 \begin{equation}
     \overbrace{\underbrace{\boxed{\;G\;}}_\text{PDF}\;\;\underbrace{\boxed{ \;2\;}}_\text{$-p$} }^{\text{Topography}}\;|\overbrace{\boxed{\;F\;}}^{\text{Channel size}}~.
@@ -285,7 +285,7 @@ Following abbreviation is used throughout the text to distinguish the cases:
     \item The second digit indicates the PS slope; $1$ for $p=-1$ and $2$ for $p=-2$.
     \item The following character(s) indicates the channel size; $F$ for full channel ($8H\times4H$), $M$ for the minimal channel ($2.4H\times0.8H$)
 \end{itemize}
-One of the irregular roughness topographies, $G2F$, is illustrated in figure~\ref{G24F}, the size of the minimal channel is represented by the black frame in the figure.
+One of the irregular roughness topographies, $G2F$, is illustrated for full-sized DNS in figure~\ref{G24F}, the size of the minimal channel is represented by the black frame in the figure.
 The roughness metrics that are widely used for roughness characterization are shown in Table~\ref{tab:SumOfCase}.
 As one can see, the roughness topographical statistics from the random generation process are preserved for both surface sizes.
 It is worth mentioning that the roughness for minimal channels and full span channels are independently generated, which means each surface has an individual realization but the statistics are controlled by the generation method.
@@ -308,20 +308,20 @@ Thus, the stability of the generation method is demonstrated in terms of roughne
         \scalebox{0.9}{
         \begin{tabular}{cccccccc|cc}
             Topography & $Sk$ & $p$ &$k_{\text{md}}/H$&$k_{\text{rms}}/H$&$L_x^{\text{corr}}/H$&$S_f/S$&ES&$\Delta U^+$&$\Delta \Theta^+$\\[2pt]
-            $P1F$ & $0.48$ & $-1$ &0.046&0.0208&0.052&0.28&0.57&7.33&4.70\\
-            $P1M$ & $0.48$ & $-1$ &0.046&0.0208&0.056&0.28&0.55&7.28&4.72\\[2pt]
-            $P2F$ & $0.48$ & $-2 $&0.046&0.0208&0.100&0.21&0.44&6.99&3.93\\
-            $P2M$ & $0.48$ & $-2 $&0.046&0.0208&0.110&0.20&0.40&6.86&4.37\\[2pt]
+            $P1F$ & $0.48$ & $-1$ &0.046&0.0208&0.052&0.28&0.57&7.33&4.17\\
+            $P1M$ & $0.48$ & $-1$ &0.046&0.0208&0.056&0.28&0.55&7.28&4.19\\[2pt]
+            $P2F$ & $0.48$ & $-2 $&0.046&0.0208&0.100&0.21&0.44&6.99&3.82\\
+            $P2M$ & $0.48$ & $-2 $&0.046&0.0208&0.110&0.20&0.40&6.86&3.84\\[2pt]
             $G1F$ & $0$    & $-1$ &0.061&0.0200&0.050&0.27&0.54&6.67&3.93\\
             $G1M$ & $0$    & $-1$ &0.061&0.0200&0.054&0.27&0.53&6.66&3.99\\[2pt]
             $G2F$ & $0$    & $-2$ &0.061&0.0200&0.100&0.20&0.43&6.30&3.62\\
             $G2M$ & $0$    & $-2$ &0.061&0.0200&0.108&0.19&0.40&6.39&3.70\\[2pt]
-            $N1F$ & $-0.48$ & $-1$&0.074&0.0208&0.052&0.28&0.57&6.14&4.73\\
-            $N1M$ & $-0.48$ & $-1$&0.074&0.0208&0.056&0.28&0.55&6.07&4.68\\[2pt]
-            $N2F$ & $-0.48$ & $-2$&0.074&0.0208&0.100&0.21&0.44&5.82&4.44\\
-            $N2M$ & $-0.48$ & $-2$&0.074&0.0208&0.110&0.20&0.40&5.63&4.38\\
+            $N1F$ & $-0.48$ & $-1$&0.074&0.0208&0.052&0.28&0.57&6.14&3.87\\
+            $N1M$ & $-0.48$ & $-1$&0.074&0.0208&0.056&0.28&0.55&6.07&3.80\\[2pt]
+            $N2F$ & $-0.48$ & $-2$&0.074&0.0208&0.100&0.21&0.44&5.82&3.54\\
+            $N2M$ & $-0.48$ & $-2$&0.074&0.0208&0.110&0.20&0.40&5.63&3.49\\
         \end{tabular}}
-                \caption{Roughness topographical statistics, where  $S_f$ is the total frontal projected area of the roughness. $L_x^{\text{corr}}$ refers to the length scale where the roughness auto-correlation in streamwise direction drops under 0.2. Simulation results are shown on the last two columns on the left.}
+                \caption{Roughness topographical statistics, where  $S_f$ is the total frontal projected area of the roughness. $L_x^{\text{corr}}$ refers to the length scale where the roughness auto-correlation in streamwise direction drops under 0.2. Simulation results are shown on the last two columns on the right.}
         \label{tab:SumOfCase}
     \end{table*}
 %The grid size for DNS is mostly determined by the smallest in-plane roughness wavelength, $\lambda_1=0.08H$.
@@ -337,54 +337,40 @@ Thus, the stability of the generation method is demonstrated in terms of roughne
 
 
 \section{Results}\label{sec:result}
-The DNS results, especially the mean velocity and temperature profiles, $\bigl<\overline{u}\bigr>(y)$ and $\bigl<\overline{\theta}\bigr>(y)$ are obtained by applying double-averaging method: $\bigl<\overline{\Phi}\bigr>(y)=\frac{1}{S}\iint_S\overline{\Phi}(x,y,z)\mathrm{d}x\mathrm{d}z$.
-Where $\overline{\Phi}(x,y,z)$ is the time averaged velocity $\Bar{u}$ /temperature $\Bar{\theta}$ field. The angular brackest $\bigl<\cdot\bigr>$ denotes horizontal averaging.
-The double-averaged velocity and temperature profiles will be denoted as $U$ and $\Theta$, respectively.
+The DNS results, specifically the mean velocity and temperature profiles, %$\bigl<\overline{u}\bigr>(y)$ and $\bigl<\overline{\theta}\bigr>(y)$ 
+$U(y)$ and $\Theta(y)$ 
+are obtained by applying averaging in wall-parallel directions and time.
+%double-averaging method: %$\bigl<\overline{\Phi}\bigr>(y)=\frac{1}{S}\iint_S\overline{\Phi}(x,y,z)\mathrm{d}x\mathrm{d}z$.
+%Where $\overline{\Phi}(x,y,z)$ is the time averaged velocity or temperature field. The angular bracket $\bigl<\cdot\bigr>$ denote the wall-parallel averaging.
+%The double-averaged velocity and temperature profiles will be denoted as $U$ and $\Theta$, respectively.
 
-Furthermore, due to the fluctuating surface structure the origin of the wall normal coordinate of a rough surface cannot be naturally defined.
+Furthermore, due to the irregularity of surface structure the origin of the wall normal coordinate of a rough surface cannot be naturally defined.
 %In order to align the logarithmic layer of smooth and rough surfaces, zero plane displacement $d$ is considered.
 To this end, Jackson (1981) proposed use of moment centroid of the drag profile on rough surfaces as the virtual origin to align the logarithmic velocity profile.
 The definition of the zero plane displacement $d$ in present work follows Jackson's method.
 %It is also shown in the present work that $d$, derived from velocity field, also applies for temperature field.
 \subsection{Effect of channel size}
-\begin{figure}[h]
-	\centering
-	\input{tikz/UG24}
-	\caption{Mean velocity profile of roughness type $G2$, dashed line: velocity profile of smooth wall $U^+_s$, solid line: velocity profile of rough wall $U^+_r$. The inset shows the velocity retardation $U^+_s-U^+_r$ as a function of wall normal distance $(y-d)^+$.}
-	\label{UG241}
-\end{figure}
+
 %\begin{figure}[H]
 %    \centering
 %	\input{tikz/DUG24}
 %	\caption{Velocity offset profile of roughness type $G2$}
 %\label{UG242}
 %\end{figure}
-The velocity field of exemplary cases $G$2$M$ and $G$2$F$ are compared in figure~\ref{UG241}.
+The velocity profile of exemplary cases $G$2$M$ and $G$2$F$ are compared in figure~\ref{UG241}.
 The velocity offset profiles $U_s^+-U_r^+$ are shown in the inset of figure~\ref{UG241} using same coloring style.
-With the same measurement, temperature fields predicted by minimal channel and full span channel are compared in figure~\ref{TG241}.
-As one can observe, excellent agreement of the profiles are achieved between minimal channels and full span channels below each critical height $y_c$.
-Due to the nature of minimal channels, sudden increase of the profiles in outer layer can be observed for both smooth and rough cases.
-However, the offset profiles of minimal channel and full span channel, as shown in the inset, collapse well and reach constant values in logarithmic layer.
+With the same approach, temperature fields predicted by minimal channel and full span channel are compared in figure~\ref{TG241}.
+As one can observe, excellent agreement of the profiles is achieved between minimal channels and full span channels below each critical height $y_c$.
+Due to the nature of minimal channels, an overestimation in the profiles in outer layer can be observed for both smooth and rough cases.
+However, the offset profiles for minimal channel and full span channel, as shown in the inset, collapse well and reach constant values in logarithmic layer.
 The roughness function $\Delta U^+$ as well as $\Delta \Theta^+$ are obtained by measuring the mean offset of the profile in logarithmic layer, specifically over $y^+=160-250$.
-\begin{figure}[h]
-	\centering
-	\input{tikz/TG24}
-	\caption{Mean temperature profile of roughness type $G2$, dashed line: temperature profile of smooth wall $\Theta^+_s$, solid line: temperature profile of rough wall $\Theta^+_r$. The inset shows the temperature retardation $\Theta^+_s-\Theta^+_r$ as a function of wall normal distance $(y-d)^+$.}
-	\label{TG241}
-\end{figure}
-    \begin{figure}[h]
-        \centering
-        \input{tikz/DUDT}
-        \caption{Comparison of the predictions by minimal channels with full span channels. $\circ$: $\Delta U^+$, $\square$: $\Delta \Theta^+$. Gray dashed lines indicate the boundary of 5\% error interval around $\Delta U_{M}^+/\Delta U_{F}^+=\Delta \Theta_{M}^+/\Delta \Theta_{F}^+$=1}
-        \label{DUDT}
-    \end{figure}
     
-Generalizing the observation to all considered cases, $\Delta U^+$ along with $\Delta \Theta^+$ are summarized on the last two columns in table.~\ref{tab:SumOfCase}.
-To visualize the disagreement of minimal channel with full span channel, graphical comparison are illustrated in figure~\ref{DUDT}.
+Generalizing the observation to all considered cases, $\Delta U^+$ along with $\Delta \Theta^+$ are summarized in the last two columns in table~\ref{tab:SumOfCase}.
+To visualize the disagreement of minimal channel with full span channel, graphical comparison is illustrated in figure~\ref{DUDT}.
 It can be observed that minimal channels show excellent agreement with the conventional full span channels, the discrepancies of both $\Delta U^+$ and $\Delta \Theta^+$ lie under 5\%.
-Consistent predictions indicate the capability of the minimal channels in reproducing the hydro- and thermodynamic properties of the irregular pseudo-realistic roughness.
+Consistent predictions indicate the capability of the minimal channels in reproducing the hydrodynamics and thermal properties of the irregular pseudo-realistic roughness.
 %Notably, rough surfaces for full span and minimal channels are independently generated through random roughness generation process, thus the realizations of the roughness are unique, only the statistic properties, i.e. roughness PS and PDF, are controlled by the generation process. 
-The results imply the determining characters of the roughness PS and PDF to both skin friction and heat transfer. 
+The results also imply that both skin friction and heat transfer of a rough surface can be uniquely determined by the roughness PS and PDF. 
 %\begin{table}
 %\centering
 %    \begin{tabular}{c| c c |  c c}
@@ -401,7 +387,24 @@ The results imply the determining characters of the roughness PS and PDF to both
 %    \label{ResultAll}
 %    \end{table}
 
-
+\begin{figure}[h]
+	\centering
+	\input{tikz/UG24}
+	\caption{Mean velocity profile of roughness type $G2$, dashed line: velocity profile of smooth wall $U^+_s$, solid line: velocity profile of rough wall $U^+_r$. The inset shows the velocity retardation $U^+_s-U^+_r$ as a function of wall normal distance $(y-d)^+$. Dash-dotted line represents Log-law.}
+	\label{UG241}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\input{tikz/TG24}
+	\caption{Mean temperature profile of roughness type $G2$, dashed line: temperature profile of smooth wall $\Theta^+_s$, solid line: temperature profile of rough wall $\Theta^+_r$. The inset shows the temperature retardation $\Theta^+_s-\Theta^+_r$ as a function of wall normal distance $(y-d)^+$.}
+	\label{TG241}
+\end{figure}
+    \begin{figure}[h]
+        \centering
+        \input{tikz/DUDT}
+        \caption{Comparison of the predictions by minimal channels with full span channels. $\circ$: $\Delta U^+$, $\square$: $\Delta \Theta^+$. Gray dashed lines indicate the boundary of 5\% error interval around $\Delta U_{M}^+/\Delta U_{F}^+=\Delta \Theta_{M}^+/\Delta \Theta_{F}^+$=1}
+        \label{DUDT}
+    \end{figure}
 \subsection{Effect of roughness topography}
 \begin{figure}[h]
     \centering
@@ -421,40 +424,41 @@ As investigated by Flack \textit{et al.}(2020), positively skewed rough surfaces
 Negatively skewed surfaces show 'slip-velocity' effect (Jelly \& Busse 2018), which translates into a weaker mean velocity retardation.
 The trend observed in the present results fully agrees with what suggested by the previous researchers.
 
-On the other hand, the averaged offset of logarithmic temperature profile $\Delta \Theta^+$, analogous to $\Delta U^+$, are shown in figure~\ref{fig:DTTOPO}.
-The evolution of $\Delta \Theta^+$ show significant difference to $\Delta U^+$ -- both in value and trend.
-It is demonstrated that Gaussian surfaces show lowest interference to temperature field while these skewed roughness, regardless of its sign, can enhance the temperature offset.
+On the other hand, the averaged offset of logarithmic temperature profile $\Delta \Theta^+$, analogous to $\Delta U^+$, is shown by squares in figure~\ref{fig:DUTOPO}.
+The evolution of $\Delta \Theta^+$ also shows monotonic increase with $Sk$.
+However, it is demonstrated that the variation of $Sk$ affects $\Delta \Theta^+$ less significantly than $\Delta U^+$.
 By adjusting the PS slope $p$ the shift of $\Delta \Theta^+$ can be observed for all roughness topographies.
-To shed light into the correlation of spatial roughness distribution and $\Delta \Theta^+$, $\Delta \Theta^+$ is plotted as a function of effective slope ES in figure~\ref{fig:DTTOPO}.
-Approximately parallel increases of $\Delta \Theta^+$ with ES for all types of roughness are exhibited.
-Similar trend can be found for $\Delta U^+$.
-Notably, surfaces whose $Sk=\pm0.48$ show comparable value of $\Delta\Theta^+$.
-The exemplary temperature profiles of $P2M$, $G2M$ and $N2M$ are ploted in figure~\ref{GPN}.
-In the near wall region, due to the different blockage effect introduced by skewness, temperature profiles diverge.
-However in the logarithmic layer, the temperature profiles of positively and negatively skewed roughness collapse.
-Have to mention that identical $\Delta \Theta^+$ of negatively and positibely skewed roughness do not necessarily translate to a identical $C_{hr}$ according to Eqn.~\ref{ThetaCh}.
-Detailed study of the effect of skewness on the heat transfer coefficient should be carried out.
-\begin{figure}
-\input{tikz/GPN_T}
-\caption{Temperature profiles of $G/P/N2M$}
-\label{GPN}
-\end{figure}
+To shed light into the correlation of spatial roughness distribution with $\Delta U^+$ and $\Delta\Theta^+$, these values are plotted as a function of effective slope ES in figure~\ref{fig:DTTOPO}.
+Approximately parallel increase of $\Delta U^+$ and $\Delta \Theta^+$ with ES for all types of roughness are exhibited.
+%Notably, surfaces whose $Sk=\pm0.48$ show comparable values for $\Delta\Theta^+$.
+%According to Eqn.~\ref{ThetaCh}, identical $\Delta \Theta^+$ of negatively and positively skewed roughness do not necessarily translate to a identical $St_r$. 
+%The exemplary temperature profiles of $P2M$, $G2M$ and $N2M$ are plotted in figure~\ref{GPN}.
+%As can be observed, in the near wall region, the temperature profiles diverge due to the different blockage effect introduced by variation of skewness.
+%However in the logarithmic layer, the temperature profiles of positively and negatively skewed roughness coincide.
+%As a consequence, an approximately identical $\Delta\Theta^+$ value is obtained for these oppositely skewed roughness.
+%\begin{figure}
+%\input{tikz/GPN_T}
+%\caption{Temperature profiles of $G/P/N2M$}
+%\label{GPN}
+%\end{figure}
 \section{ Conclusions }\label{sec:Cons}
-DNS is carried out for fully developed turbulent flow over artificial irregular roughness at $Re_\tau\approx 500$.
+DNS is carried out for fully developed turbulent channel with artificial irregular roughness at $Re_\tau\approx 500$.
 A passive scalar is added to simulate the temperature field.
 The rough surfaces are generated based on the mathematical roughness generation method proposed by Ràfols \& Almqvist(2019).
-3 types of roughness PDF, namely $Sk=-0.48$, $0$, $0.48$ are combined with 2 types of power-law roughness PS whose slope $p=-1$\& $-2$.
-It is demonstrated that the minimal channel is capable for reproducing the hydro- and thermodynamic properties of the artificial irregular roughness with significant reduction of computational effort.
-In the present work, roughness function $\Delta U^+$ and the offset of temperature profile in logarithmic layer $\Delta T^+$ are compared among all types of roughness topographies with systematically adjusted PDF and PS.
-It is found that the influence of roughness is different for $\Delta U^+$ and $\Delta\Theta^+$.
-A monotonically increase of $\Delta U^+$ as a function of $Sk$ is observed, while for temperature field the skewed roughness -- regardless peak or pit dominant -- can enhance the temperature offset $\Delta\Theta^+$ to an comparable extent relative to non-skewed roughness given identical PS.
-Parallel increases of $\Delta U^+$ and $\Delta\Theta^+$ for different types of roughness can be observed with increasing ES.
+Three types of roughness PDF, namely $Sk=-0.48$, $0$, $0.48$ are combined with 2 types of power-law roughness PS whose slope $p=-1$\& $-2$.
+It is demonstrated that the minimal channel is capable of reproducing the hydrodynamic and thermal properties of the artificial irregular roughness with significant reduction in computational effort.
+In the present work, the roughness function $\Delta U^+$ and the offset of temperature profile in logarithmic layer $\Delta \Theta^+$ are compared among considered types of roughness topographies with systematically adjusted PDF and PS.
+Simultaneous increase of $\Delta U^+$ and $\Delta\Theta^+$ for different types of roughness can be observed with increasing ES.
+A monotonic increase of $\Delta U^+$ as a function of $Sk$ is observed, similar trend can be observed for $\Delta \Theta^+$.
+However, the influence of $Sk$ on the temperature profile shows less significance than the influence on the velocity profile.
+The different behavior of $\Delta\Theta^+$ calls for a detailed study on the temperature field of turbulent flow over rough surfaces.
+
 
 %%%%%%%%%% Insert here acknowledgments if necessary
 
 \Acknowledgments
 
-Jiasheng Yang and Pourya Forooghi gratefully acknowledge financial support from Friedrich und Elisabeth Boysen-Foundation (BOY-151). This work was performed on the supercomputer ForHLR and the storage facility LSDF funded by the Ministry of Science, Research and the Arts Baden-Württemberg and by the Federal Ministry of Education and Research.
+Support by DFG project number CRC TRR 150 as well as the Friedrich-and-Elisabeth-Boysen Foundation (BOY-151) is greatly acknowledged. This work was performed on the supercomputer ForHLR and the storage facility LSDF funded by the Ministry of Science, Research and the Arts Baden-Württemberg and by the Federal Ministry of Education and Research.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -469,13 +473,14 @@ Jiasheng Yang and Pourya Forooghi gratefully acknowledge financial support from 
 \item Forooghi, P., Flory, M., Bertsche, D., Wetzel, T. and Frohnapfel, B. (2017a). Heat transfer enhancement on the liquid side of an industrially designed flat-tube heat exchanger with passive insertes-numerical investigation. {\it Appl. Therm. Eng.}, Vol. 123, pp. 573-583.
 \item Dipprey, D. F. and Sabersky, R. H. (1963), Heat and momentum transfer in smooth and rough tubes at various prandtl numbers. {\it Int. J. Heat Mass Transfer}. Vol.6, pp. 329-353.
 \item Bons, J.P. (2005) A critical assessment of Reynolds analogy for turbine flows. {\it ASME J. Heat Transf.}, Vol. 127(5), pp. 472-485.
-\item Kader, B. A. (1981) Temperature and concentration profiles in fully turbulent boundary layers. {\it Intl. J. Heat Mass Transfer}, Vol. 24, pp. 1541-1544.
+%\item Kader, B. A. (1981) Temperature and concentration profiles in fully turbulent boundary layers. {\it Intl. J. Heat Mass Transfer}, Vol. 24, pp. 1541-1544.
 \item MacDonald, M., Hutchins, N., Chung, D. (2019), Roughness effects in turbulent forced convection, {\it J. Fluid Mech.}, Vol. 861, pp. 138-162.
 \item Flack, K. A. (2018), Moving beyond Moody, {\it  J. Fluid Mech.}, Vol. 842, pp. 1-4.
 \item Chung, D., Chan, L., MacDonald, L., Hutchins, N. and Ooi, A. (2015), A fast direct numerical simulation method for characterising hydraulic roughness, {\it  J. Fluid Mech.}, Vol. 773, pp. 418-431.
 \item MacDonald, M., Chung, D. Hutchins, N., Chan, L., Ooi, A. and Garc{\'{\i}}a-Mayoral, A. (2016), The minimal channel: a fast and direct method for characterising roughness, {\it Journal of Physics: Conference Series}, Vol. 708,
 \item Pérez-Ràfols, F. and Almqvist, A. (2019), Generating randomly rough surfaces with given height probability distribution and power spectrum, {\it Tribology International}, Vol. 131, pp. 591-604.
-\item Goldstein, D., Handler, R. and Sirovich, L., Modeling a no-slip flow boundary with an external force field., {\it Journal of Computational Physics}, Vol. 105, pp. 354-366.
+\item Goldstein, D., Handler, R. and Sirovich, L., Modeling a no-slip flow boundary with an external force field, {\it Journal of Computational Physics}, Vol. 105, pp. 354-366.
+\item Kasagi, N., Tomita, Y., Kuroda, A. (1992), Direct numerical simulation of of passive scalar field in a turbulent channel flow, {\it Journal of Heat Transfer}, Vol. 114(3), pp. 598-606.
 \item Barros, J. M., Schultz, M. P. and Flack, K. A. (2018), Measurements of skin-friction of systematically generated surfaces roughness,{\it  Intl. J. Heat and Fluid Flow}, Vol. 72, pp. 1-7.
 \item Nikora, V. I., Stoesser, T., Cameron, S. M., Stewart, M., Papadopoulos, K., Ouro, P., McSherry, R.,Zampiron, A., Marusic, I., Falconer, R. A. and et al (2019), Friction factor decomposition for rough-wall flows: theoretical background and application to open-channel flows, {\it J. Fluid Mech.}, Vol. 872, pp. 626-664.
 \item Jackson, P.S. 1981 On the displacement height in the logarithmic velocity profile. \textit{J. Fluid Mech.} vol.111, pp.15-25.
